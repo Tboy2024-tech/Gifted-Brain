@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
+
 interface DashboardCardProps {
   title: string;
   icon?: ReactNode;
@@ -6,6 +7,7 @@ interface DashboardCardProps {
   className?: string;
   footer?: ReactNode;
 }
+
 const DashboardCard: React.FC<DashboardCardProps> = ({
   title,
   icon,
@@ -26,4 +28,5 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
         </div>}
     </div>;
 };
+
 export default DashboardCard;

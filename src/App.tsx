@@ -44,5 +44,3 @@ export function App() {
     </Router>
   );
 }
-
-export { App }

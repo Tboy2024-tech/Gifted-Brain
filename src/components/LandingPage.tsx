@@ -11,23 +11,23 @@ import 'swiper/css/effect-fade';
 const slides = [
   {
     image: "https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg",
-    quote: "Education is not preparation for life; education is life itself.",
-    author: "John Dewey"
+    title: "Learning is an Adventure!",
+    description: "We cultivate creativity, critical thinking, and empathy, shaping well-rounded individuals ready to make a positive impact on the world."
   },
   {
     image: "https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg",
-    quote: "The beautiful thing about learning is that no one can take it away from you.",
-    author: "B.B. King"
+    title: "Empowering Future Leaders",
+    description: "Our comprehensive approach to education nurtures both academic excellence and character development."
   },
   {
     image: "https://images.pexels.com/photos/5905445/pexels-photo-5905445.jpeg",
-    quote: "Education is the most powerful weapon which you can use to change the world.",
-    author: "Nelson Mandela"
+    title: "Excellence in Education",
+    description: "Creating an environment where every student discovers their potential and develops the skills needed for success."
   },
   {
     image: "https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg",
-    quote: "Knowledge is power. Information is liberating. Education is the premise of progress.",
-    author: "Kofi Annan"
+    title: "Building Tomorrow's Leaders",
+    description: "Providing quality education that prepares students for the challenges and opportunities of the future."
   }
 ];
 
@@ -35,7 +35,7 @@ const LandingPage = () => {
   return (
     <div className="w-full min-h-screen">
       {/* Navigation Bar */}
-      <nav className="bg-[#8B0000] text-white">
+      <nav className="bg-[#8B0000] text-white fixed w-full z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
@@ -69,7 +69,7 @@ const LandingPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <div className="relative">
+      <div className="relative pt-16">
         <Swiper
           modules={[Autoplay, Pagination, Navigation, EffectFade]}
           effect="fade"
@@ -81,9 +81,12 @@ const LandingPage = () => {
             clickable: true,
             dynamicBullets: true,
           }}
-          navigation={true}
+          navigation={{
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+          }}
           loop={true}
-          className="w-full h-[500px]"
+          className="w-full h-[600px]"
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
@@ -93,17 +96,23 @@ const LandingPage = () => {
                   alt="Education"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                  <div className="text-center text-white px-4">
-                    <p className="text-2xl md:text-3xl lg:text-4xl font-serif italic mb-4">
-                      "{slide.quote}"
-                    </p>
-                    <p className="text-lg md:text-xl">- {slide.author}</p>
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center">
+                  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-2xl">
+                      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+                        {slide.title}
+                      </h1>
+                      <p className="text-lg md:text-xl text-white opacity-90">
+                        {slide.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </SwiperSlide>
           ))}
+          <div className="swiper-button-prev !text-white after:!text-3xl hover:!text-yellow-300 transition-colors"></div>
+          <div className="swiper-button-next !text-white after:!text-3xl hover:!text-yellow-300 transition-colors"></div>
         </Swiper>
       </div>
 

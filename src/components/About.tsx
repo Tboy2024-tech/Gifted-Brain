@@ -6,72 +6,35 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 
-const slides = [
-  {
-    image: "https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg",
-    quote: "Education is not preparation for life; education is life itself.",
-    author: "John Dewey"
-  },
-  {
-    image: "https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg",
-    quote: "The beautiful thing about learning is that no one can take it away from you.",
-    author: "B.B. King"
-  },
-  {
-    image: "https://images.pexels.com/photos/5905445/pexels-photo-5905445.jpeg",
-    quote: "Education is the most powerful weapon which you can use to change the world.",
-    author: "Nelson Mandela"
-  }
-];
-
 const About = () => {
   return (
     <div className="min-h-screen bg-cream-50">
-      {/* Hero Section */}
-      <div className="relative h-[500px]">
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation, EffectFade]}
-          effect="fade"
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-            dynamicBullets: true,
-          }}
-          navigation={true}
-          loop={true}
-          className="w-full h-full"
-        >
-          {slides.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <div className="relative w-full h-full">
-                <img
-                  src={slide.image}
-                  alt="Education"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                  <div className="text-center text-white px-4">
-                    <p className="text-2xl md:text-3xl lg:text-4xl font-serif italic mb-4">
-                      "{slide.quote}"
-                    </p>
-                    <p className="text-lg md:text-xl">- {slide.author}</p>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      {/* Hero Banner */}
+      <div className="relative h-[300px]">
+        <img
+          src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg"
+          alt="School Building"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <h1 className="text-4xl font-bold text-white">ABOUT US</h1>
+        </div>
       </div>
 
-      {/* Mission Statement Section */}
-      <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-[#8B0000] mb-8 text-center">Our Mission Statement</h2>
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-4">
-            <ul className="space-y-4 text-gray-700">
+      <div className="container mx-auto px-4 py-12">
+        {/* Quote */}
+        <div className="text-center mb-12">
+          <p className="text-xl italic text-[#8B0000]">
+            "Attracting Children from Nations, Returning Leaders to the Nations."
+          </p>
+          <p className="text-sm text-gray-500 mt-2">Pastor Adams • Executive Founder</p>
+        </div>
+
+        {/* Mission Statement */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div>
+            <h2 className="text-2xl font-bold text-[#8B0000] mb-6">Our Mission Statement</h2>
+            <ul className="space-y-3">
               <li className="flex items-start">
                 <div className="bg-[#8B0000] text-white rounded-full p-1 mr-3 mt-1">
                   <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -100,55 +63,142 @@ const About = () => {
           </div>
           <div>
             <img
-              src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg"
-              alt="Mission"
+              src="https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg"
+              alt="Principal's Office"
               className="rounded-lg shadow-lg w-full h-[300px] object-cover"
             />
           </div>
         </div>
-      </section>
 
-      {/* Vision Statement Section */}
-      <section className="py-16 px-4 md:px-8 bg-cream-100">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#8B0000] mb-8 text-center">Vision Statement</h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <p className="text-gray-700 mb-6">
-                To be a leading educational institution that empowers students to become confident,
-                compassionate, and responsible global citizens who excel academically and contribute
-                positively to society.
-              </p>
-              <p className="text-gray-700">
-                Our vision encompasses creating an environment where every student can discover their
-                potential and develop the skills needed for success in the modern world.
-              </p>
-            </div>
-            <div>
+        {/* Vision Statement */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-[#8B0000] mb-6">Vision Statement</h2>
+          <p className="text-gray-700">
+            To be a leading educational institution that empowers students to become confident,
+            compassionate, and responsible global citizens who excel academically and contribute
+            positively to society. Our vision encompasses creating an environment where every
+            student can discover their potential and develop the skills needed for success in
+            the modern world.
+          </p>
+        </div>
+
+        {/* School Anthem */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-[#8B0000] mb-6">School Anthem</h2>
+          <div className="text-center italic">
+            <p>Gifted Brain School, where excellence thrives</p>
+            <p>With knowledge and wisdom, our spirits arise</p>
+            <p>In learning and character, we grow each day</p>
+            <p>Preparing for futures bright in every way</p>
+          </div>
+        </div>
+
+        {/* Campuses */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-[#8B0000] mb-6">Our Campuses</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="rounded-lg overflow-hidden shadow-lg">
               <img
-                src="https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg"
-                alt="Vision"
-                className="rounded-lg shadow-lg w-full h-[300px] object-cover"
+                src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg"
+                alt="Primary School"
+                className="w-full h-48 object-cover"
               />
+              <div className="p-4">
+                <h3 className="font-bold text-lg mb-2">Primary School</h3>
+                <p className="text-gray-600 text-sm">
+                  Our primary school offers a solid foundation in core subjects while fostering
+                  creativity and critical thinking.
+                </p>
+              </div>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img
+                src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg"
+                alt="Secondary School"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="font-bold text-lg mb-2">Secondary School</h3>
+                <p className="text-gray-600 text-sm">
+                  The secondary school provides comprehensive education with modern facilities
+                  and experienced faculty.
+                </p>
+              </div>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img
+                src="https://images.pexels.com/photos/5905445/pexels-photo-5905445.jpeg"
+                alt="College Prep"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="font-bold text-lg mb-2">College Prep</h3>
+                <p className="text-gray-600 text-sm">
+                  Our college preparatory program ensures students are ready for higher
+                  education success.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* School Anthem Section */}
-      <section className="py-16 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#8B0000] mb-8">School Anthem</h2>
-          <div className="max-w-2xl mx-auto">
-            <p className="text-gray-700 italic text-lg leading-relaxed">
-              Gifted Brain School, where excellence thrives<br />
-              With knowledge and wisdom, our spirits arise<br />
-              In learning and character, we grow each day<br />
-              Preparing for futures bright in every way
-            </p>
+        {/* Management Team */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-[#8B0000] mb-6">Management Team</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              {
+                name: "Dr. Sarah Johnson",
+                role: "Principal",
+                image: "https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg"
+              },
+              {
+                name: "Mr. David Williams",
+                role: "Vice Principal",
+                image: "https://images.pexels.com/photos/5905512/pexels-photo-5905512.jpeg"
+              },
+              {
+                name: "Mrs. Emily Brown",
+                role: "Head of Academics",
+                image: "https://images.pexels.com/photos/5212339/pexels-photo-5212339.jpeg"
+              },
+              {
+                name: "Mr. Michael Davis",
+                role: "Administrative Head",
+                image: "https://images.pexels.com/photos/5905483/pexels-photo-5905483.jpeg"
+              }
+            ].map((member, index) => (
+              <div key={index} className="text-center">
+                <div className="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="font-bold text-lg">{member.name}</h3>
+                <p className="text-gray-600">{member.role}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
+
+        {/* Events & News */}
+        <div>
+          <h2 className="text-2xl font-bold text-[#8B0000] mb-6">Events & News</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {Array(8).fill(null).map((_, index) => (
+              <div key={index} className="rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src={`https://images.pexels.com/photos/${5905445 + index}/pexels-photo-${5905445 + index}.jpeg`}
+                  alt={`Event ${index + 1}`}
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
